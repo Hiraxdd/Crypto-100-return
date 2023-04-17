@@ -8,10 +8,14 @@ Tiny app that uses api and the interface ValueConverter
 + Rank
 + Price
 + Price Change in 24 hours  
+  
 ![Image1](https://github.com/Hiraxdd/Crypto-100-return/blob/main/images/hjjj.jpg)
-**I used IValueConverter to make the Price Change in 24 hours change colors**
+  
+**I used IValueConverter to make the Price Change in 24 hours change colors**  
 + If the Price change is positive then the color is green  
-+ If the Price change is negative then the color is red  
++ If the Price change is negative then the color is red   
+  
+![Image2](https://github.com/Hiraxdd/Crypto-100-return/blob/main/images/img2.jpg)  
 
 
 
