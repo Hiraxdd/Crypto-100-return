@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:DniOtwarte"
+             x:Class="DniOtwarte.MainPage"
+             BackgroundImageSource="https://i.pinimg.com/originals/82/b8/83/82b8832301f9db31f8d73b0e21882ca4.jpg" >
+<ContentPage.Resources>
+    <ResourceDictionary>
+        <local:ColorConvert x:Key="colorConvert" />
+    </ResourceDictionary>
+</ContentPage.Resources>
+    
+
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Label Text="Price Change:    " Margin="0,20,0,0" FontSize="20" TextColor="White"/>
+            <Switch x:Name="Switch" IsToggled="False" Margin="0,20,0,0" Scale="1.7" OnColor="Orange"/>
+        </StackLayout>
+        <ListView x:Name="apiResult" HasUnevenRows="True" Margin="30,30,30,30" SeparatorVisibility="Default" SeparatorColor="Black">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BackgroundColor="#403f3f">
+                            <StackLayout>
+                            <Label Text="{Binding name}" TextColor="Black" FontSize="19"/>
+                            
+                            <StackLayout Orientation="Horizontal">
+                                    <Label Text="Rank: " TextColor="Yellow" FontSize="15"/>
+                                    <Label Text="{Binding rank}" TextColor="Yellow" FontSize="15"/>
+                            </StackLayout>
+  
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Price: " TextColor="white"/>
+                                <Label Text="{Binding priceUsd, StringFormat='{0} USD'}" TextColor="white" />
+                            </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Price Change 24hrs: " TextColor="Gray" IsVisible="{Binding Source={x:Reference Switch}, Path=IsToggled}"/>
+                                    <Label x:Name="label1" Text="{Binding changePercent24Hr, StringFormat='{0} %'}" TextColor="{Binding Source={x:Reference label1},Path=Text,Converter={StaticResource colorConvert}}" IsVisible="{Binding Source={x:Reference Switch}, Path=IsToggled}"/>
+                                </StackLayout>
+
+
+
+
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate> 
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
