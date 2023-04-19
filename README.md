@@ -1,7 +1,7 @@
 # Crypto App 100% Return NO SCAM
 Tiny app that uses api and the interface ValueConverter  
   
-[UsedApi](https://docs.coincap.io/)  
+Api: https://docs.coincap.io/ 
 
 **App displays real time data of cryptocurrencies**
 + Name
